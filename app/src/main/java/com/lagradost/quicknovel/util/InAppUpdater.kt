@@ -73,7 +73,7 @@ class InAppUpdater {
 
         private suspend fun Activity.getAppUpdate(): Update {
             try {
-                val url = "https://api.github.com/repos/LagradOst/QuickNovel/releases/latest"
+                val url = "https://api.github.com/repos/Yumesion/NovelYume/releases/latest"
                 val headers = mapOf("Accept" to "application/vnd.github.v3+json")
                 val response =
                     mapper.readValue<GithubRelease>(app.get(url, headers = headers).text)

@@ -414,9 +414,9 @@ class SettingScreen : SearchableSettings {
                     Preference.PreferenceItem.TextPreference(
                         icon = painterResource(R.drawable.ic_github_logo),
                         title = "Github",
-                        subtitle = "https://github.com/LagradOst/QuickNovel",
+                        subtitle = "https://github.com/Yumesion/NovelYume",
                         onClick = {
-                            openInBrowser("https://github.com/LagradOst/QuickNovel")
+                            openInBrowser("https://github.com/Yumesion/NovelYume")
                         }
                     ),
                     Preference.PreferenceItem.TextPreference(
