@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Navegación Principal / Títulos de Pestañas -->
-    <string name="app_name">QuickNovel</string>
+    <string name="app_name">Novel Yume</string>
     <string name="title_home">Explorar</string>
     <string name="title_search">Buscar</string>
     <string name="title_download">Biblioteca</string>

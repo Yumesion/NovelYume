@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.lagradost.quicknovel"
+        applicationId "app.novelyume"
         minSdkVersion 23
         targetSdkVersion 37
         versionCode 56
