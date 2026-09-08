@@ -1,68 +1,46 @@
-# QuickNovel
+# Novel Yume
 
-**English** | [Русский](README_RU.md)
+Lecteur de **romans / light novels** pour Android, fork open source de [QuickNovel](https://github.com/LagradOst/QuickNovel) (sans pub, sans trackers).
 
-Adfree FOSS Android app for downloading novels. It also functions as an Epub reader.
+## Fonctionnalités
 
-**Discord:** https://discord.gg/5Hus6fM
+- Lecteur EPUB intégré + lecture en continu
+- Près de 70 sources de romans (RoyalRoad, ScribbleHub, NovelBin, WuxiaWorld, LightNovelPub, AllNovel…)
+- 🇫🇷 Source **LightNovelVF** (lightnovelvf.com) ajoutée
+- Recherche, catalogue, historique, favoris, téléchargement hors-ligne
+- Synthèse vocale (TTS) pour écouter ses romans
+- Mise à jour automatique via les Releases GitHub
 
-**Download:** https://github.com/LagradOst/QuickNovel/releases
+## 📥 Téléchargement
 
-**Providers used:** 
+APK signé disponible sur la page **Releases** :
 
-- https://allnovel.org
-- https://annas-archive.org
-- https://bestlightnovel.com
-- https://chrysanthemumgarden.com
-- https://www.fanmtl.com
-- https://fenrirealm.com
-- https://free.kolnovel.com
-- https://freewebnovel.com
-- https://fucknovelpia.com
-- https://graycity.net
-- https://hiraethtranslation.com
-- https://indowebnovel.id
-- https://libread.com
-- https://lightnovelstranslations.com
-- https://lightnovelworld.org
-- https://lnmtl.com
-- https://meionovels.com
-- https://mtlnovel.me
-- https://www.nobadnovel.com
-- https://novelbin.com
-- https://novelbuddy.com
-- https://novelfire.net
-- https://novelfull.com
-- https://novelsonline.org
-- https://novlove.com
-- https://pawread.com
-- https://readfrom.net
-- https://readnovelfull.com
-- https://readonlinefreebook.com
-- https://rewayat.club
-- https://risenovel.com
-- https://www.royalroad.com
-- https://sakuranovel.id
-- https://www.scribblehub.com
-- https://www.skynovels.net
-- https://www.sonicmtl.com
-- https://wtr-lab.com
-- https://wuxia.click
-- https://www.wuxiabox.com
+🔗 https://github.com/Yumesion/NovelYume/releases
 
-**Screenshoots:**
+## Installation
 
-<img src="./.github/home.jpg" height="400"/><img src="./.github/search.jpg" height="400"/><img src="./.github/downloads.jpg" height="400"/><img src="./.github/result.jpg" height="400"/><img src="./.github/reader.jpg" height="400"/>
+1. Télécharge l'APK depuis les [Releases](https://github.com/Yumesion/NovelYume/releases) et installe-le.
+2. ⚠️ **Active le français** : Réglages → *Langues des sources* → coche **Français** (sinon la source LightNovelVF est masquée par défaut).
 
-**Legal notice:**
+## 🌍 Nos autres projets
 
-Any legal issues regarding the content on this application should be taken up with the actual file hosts and providers themselves as we are not affiliated with them.
+| Projet | Type | Téléchargement |
+|---|---|---|
+| **Scan Yume** | Lecteur de mangas (fork de Mihon / Tachiyomi) | https://github.com/Yumesion/ScanYume/releases |
+| **Yume Extensions** | Extensions de sources pour Scan Yume (Yurei Scan, Solaris Scans) | voir installation ci-dessous |
 
-In case of copyright infringement, please directly contact the responsible parties or the streaming websites.
+### Extensions mangas (pour Scan Yume)
 
-The app is purely for educational and personal use.
+Dans **Scan Yume** → Parcourir → Sources → Extensions → ⋮ → *Dépôts d'extensions*, ajoute :
 
-QuickNovel does not host any content on the app, and has no control over what media is put up or taken down. QuickNovel functions like any other search engine, such as Google. QuickNovel does not host, upload or manage any videos, films or content. It simply crawls, aggregates and displayes links in a convenient, user-friendly interface.
+```
+https://raw.githubusercontent.com/Yumesion/extensions/main/index.json
+```
 
-It merely scrapes 3rd-party websites that are publicly accessable via any regular web browser. It is the responsibility of user to avoid any actions that might violate the laws governing his/her locality. Use QuickNovel at your own risk.
+## Avertissement
 
+Novel Yume n'héberge aucun contenu. L'application agrège et affiche des liens vers des sites tiers publiquement accessibles, comme un moteur de recherche. L'utilisation relève de la responsabilité de l'utilisateur.
+
+## Crédits
+
+Basé sur [QuickNovel](https://github.com/LagradOst/QuickNovel) par [LagradOst](https://github.com/LagradOst).
