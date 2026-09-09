@@ -66,6 +66,7 @@ import com.lagradost.quicknovel.providers.SkyNovelsProvider
 import com.lagradost.quicknovel.providers.SonicMTLProvider
 import com.lagradost.quicknovel.providers.SyosetuProvider
 import com.lagradost.quicknovel.providers.WattpadProvider
+import com.lagradost.quicknovel.providers.WorldNovelProvider
 import com.lagradost.quicknovel.providers.WtrLabProvider
 import com.lagradost.quicknovel.providers.WuxiaBoxProvider
 import com.lagradost.quicknovel.providers.WuxiaClickProvider
@@ -145,6 +146,7 @@ class Apis {
             SkyNovelsProvider(),
             SonicMTLProvider(),
             WattpadProvider(),
+            WorldNovelProvider(),
             WtrLabProvider(),
             WuxiaBoxProvider(),
             WuxiaClickProvider(),
@@ -275,7 +277,7 @@ class Apis {
         fun Context.getApiProviderLangSettings(): HashSet<String> {
             val settingsManager = PreferenceManager.getDefaultSharedPreferences(this)
             val hashSet = HashSet<String>()
-            hashSet.add("en") // def is only en
+            hashSet.add("fr") // def is only fr (Novel Yume: French-only sources by default)
             val list = settingsManager.getStringSet(
                 this.getString(R.string.provider_lang_key),
                 hashSet.toMutableSet()

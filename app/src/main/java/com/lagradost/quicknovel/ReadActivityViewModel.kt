@@ -581,12 +581,12 @@ class ReadActivityViewModel : ViewModel() {
 
 
     /** lower padding for preloading current-chapterPaddingBottom*/
-    private var initPaddingBottom = 1//these are to reduce loadings times
-    private var chapterPaddingBottom: Int = 1
+    private var initPaddingBottom = 0 // Novel Yume : chargement 1 par 1 (anti-ban site)
+    private var chapterPaddingBottom: Int = 0
 
     /** upper padding, for preloading current+chapterPaddingTop */
-    private var initPaddingTop = 1
-    private var chapterPaddingTop: Int = 2
+    private var initPaddingTop = 0 // Novel Yume : chargement 1 par 1 (anti-ban site)
+    private var chapterPaddingTop: Int = 0
 
     fun reloadChapter(index: Int) = ioSafe {
         hasExpanded.clear() // will unfuck the rest
@@ -650,7 +650,7 @@ class ReadActivityViewModel : ViewModel() {
         // dynamically increase padding in case of very small chapters with a maximum of 10 chapters
         val first = visibility.firstInMemory.index
         val last = visibility.lastInMemory.index
-        chapterPaddingTop = minOf(10, maxOf(chapterPaddingTop, (last - first) + 1))
+        chapterPaddingTop = minOf(1, maxOf(chapterPaddingTop, (last - first) + 1))
 
         val current = currentIndex
 
