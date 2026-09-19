@@ -25,6 +25,7 @@ import com.lagradost.quicknovel.providers.GalaxyNovelsProvider
 import com.lagradost.quicknovel.providers.GraycityProvider
 import com.lagradost.quicknovel.providers.HiraethTranslationProvider
 import com.lagradost.quicknovel.providers.IndoWebNovelProvider
+import com.lagradost.quicknovel.providers.JgardenProvider
 import com.lagradost.quicknovel.providers.LnoriProvider
 import com.lagradost.quicknovel.providers.KolNovelProvider
 import com.lagradost.quicknovel.providers.LibReadProvider
@@ -97,6 +98,7 @@ class Apis {
             GraycityProvider(),
             GalaxyNovelsProvider(),
             HiraethTranslationProvider(),
+            JgardenProvider(),
             IndoWebNovelProvider(),
             KolNovelProvider(),
             LibReadProvider(),

@@ -7,6 +7,7 @@ Lecteur de **romans / light novels** pour Android, fork open source de [QuickNov
 - Lecteur EPUB intégré + lecture en continu
 - Près de 70 sources de romans (RoyalRoad, ScribbleHub, NovelBin, WuxiaWorld, LightNovelPub, AllNovel…)
 - 🇫🇷 Source **LightNovelVF** (lightnovelvf.com) ajoutée
+- 🇫🇷 Source **J-Garden** (j-garden.fr) ajoutée
 - Recherche, catalogue, historique, favoris, téléchargement hors-ligne
 - Synthèse vocale (TTS) pour écouter ses romans
 - Mise à jour automatique via les Releases GitHub
@@ -16,7 +17,7 @@ Lecteur de **romans / light novels** pour Android, fork open source de [QuickNov
 APK signé disponible sur la page **Releases** :
 
 - 🔗 **Dernière version** : https://github.com/Yumesion/NovelYume/releases/latest
-- 📲 **Téléchargement direct (APK)** : https://github.com/Yumesion/NovelYume/releases/latest/download/NovelYume-v3.7.9.apk
+- 📲 **Téléchargement direct (APK)** : https://github.com/Yumesion/NovelYume/releases/latest/download/NovelYume-v3.7.10.apk
 
 ## Installation
 
