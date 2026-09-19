@@ -93,16 +93,24 @@ class JgardenProvider : MainAPI() {
     }
 
     private fun chapterFromElement(element: Element): ChapterData? {
-        val href = element.absUrl("href")
+        val href = resolveHref(element.attr("href"))
         val text = element.text().trim()
         if (href.isBlank() || text.isBlank()) return null
         return newChapterData(text, href)
     }
 
+    // Certains liens du site sont malformés : "http://<slug>/" sans domaine.
+    private fun resolveHref(raw: String): String {
+        if (raw.startsWith("http://") && !raw.substringAfter("://").substringBefore("/").contains(".")) {
+            return "$mainUrl/${raw.substringAfter("://")}"
+        }
+        return fixUrl(raw)
+    }
+
     companion object {
         private const val CARD_SELECTOR = "a[href]:has(img)"
         private const val CHAPTER_SELECTOR =
-            "a[href*='chapitre'], a[href*='chapter'], a[href*='postface'], a[href*='epilogue'], a[href*='prologue']"
+            "a[href*='chapitre'], a[href*='chapter'], a[href*='postface'], a[href*='epilogue'], a[href*='prologue'], a[href*='bonus'], a[href*='interlude']"
         private val NAV_SLUGS = setOf(
             "a-propos", "actualites", "faq-jgarden", "recrutement", "jg-ln", "jg-autres-lns",
             "jg-manga", "jg-web-novel", "orv", "series-abandonnees", "series-en-pause",
