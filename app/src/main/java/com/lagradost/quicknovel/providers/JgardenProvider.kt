@@ -7,6 +7,7 @@ import com.lagradost.quicknovel.LoadResponse
 import com.lagradost.quicknovel.MainAPI
 import com.lagradost.quicknovel.R
 import com.lagradost.quicknovel.SearchResponse
+import com.lagradost.quicknovel.fixUrl
 import com.lagradost.quicknovel.fixUrlNull
 import com.lagradost.quicknovel.newChapterData
 import com.lagradost.quicknovel.newSearchResponse
@@ -61,9 +62,12 @@ class JgardenProvider : MainAPI() {
             val s = it.attr("src")
             s.contains("/wp-content/uploads/") && !s.contains("logo", ignoreCase = true)
         }?.attr("src")
+        val author = doc.select("p").firstOrNull { it.text().contains("Auteur") }?.text()
+            ?.substringAfter("Auteur :")?.trim()
         val chapters = doc.select(CHAPTER_SELECTOR).mapNotNull(::chapterFromElement)
         return newStreamResponse(title, url, chapters) {
             posterUrl = fixUrlNull(cover)
+            this.author = author
         }
     }
 
@@ -75,7 +79,7 @@ class JgardenProvider : MainAPI() {
     }
 
     private fun cardFromElement(element: Element): SearchResponse? {
-        val href = element.attr("href")
+        val href = fixUrl(element.attr("href"))
         if (!href.startsWith("$mainUrl/")) return null
         val slug = href.trimEnd('/').substringAfterLast('/')
         if (slug.isBlank() || slug in NAV_SLUGS) return null
@@ -96,7 +100,7 @@ class JgardenProvider : MainAPI() {
     }
 
     companion object {
-        private const val CARD_SELECTOR = "a[href*='j-garden.fr/']:has(img)"
+        private const val CARD_SELECTOR = "a[href]:has(img)"
         private const val CHAPTER_SELECTOR =
             "a[href*='chapitre'], a[href*='chapter'], a[href*='postface'], a[href*='epilogue'], a[href*='prologue']"
         private val NAV_SLUGS = setOf(

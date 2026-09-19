@@ -32,8 +32,8 @@ android {
         applicationId "app.novelyume"
         minSdkVersion 23
         targetSdkVersion 37
-        versionCode 60
-        versionName "3.8.0"
+        versionCode 61
+        versionName "3.8.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
