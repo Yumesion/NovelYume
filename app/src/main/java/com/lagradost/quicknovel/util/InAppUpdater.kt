@@ -71,6 +71,20 @@ class InAppUpdater {
         )
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).build()
 
+        private fun isNewerVersion(current: String?, found: String): Boolean {
+            if (current == null) return true
+            val currentParts = current.split(".").map { it.toIntOrNull() ?: 0 }
+            val foundParts = found.split(".").map { it.toIntOrNull() ?: 0 }
+            val maxLen = maxOf(currentParts.size, foundParts.size)
+            for (i in 0 until maxLen) {
+                val c = currentParts.getOrElse(i) { 0 }
+                val f = foundParts.getOrElse(i) { 0 }
+                if (c < f) return true
+                if (c > f) return false
+            }
+            return false
+        }
+
         private suspend fun Activity.getAppUpdate(): Update {
             try {
                 val url = "https://api.github.com/repos/Yumesion/NovelYume/releases/latest"
@@ -78,7 +92,7 @@ class InAppUpdater {
                 val response =
                     mapper.readValue<GithubRelease>(app.get(url, headers = headers).text)
 
-                val versionRegex = Regex("""(.*?((\d)\.(\d)\.(\d)).*\.apk)""")
+                val versionRegex = Regex("""(.*?((\d+)\.(\d+)\.(\d+)).*\.apk)""")
 
                 /*
                 val releases = response.map { it.assets }.flatten()
@@ -106,9 +120,9 @@ class InAppUpdater {
 
                 val foundVersion = foundAsset?.name?.let { versionRegex.find(it) }
                 val shouldUpdate =
-                    if (foundAsset?.browser_download_url != "" && foundVersion != null) currentVersion?.versionName?.compareTo(
-                        foundVersion.groupValues[2]
-                    )!! < 0 else false
+                    if (foundAsset?.browser_download_url != "" && foundVersion != null) {
+                        isNewerVersion(currentVersion?.versionName, foundVersion.groupValues[2])
+                    } else false
                 return if (foundVersion != null) {
                     Update(
                         shouldUpdate,

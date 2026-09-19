@@ -17,7 +17,7 @@ Lecteur de **romans / light novels** pour Android, fork open source de [QuickNov
 APK signé disponible sur la page **Releases** :
 
 - 🔗 **Dernière version** : https://github.com/Yumesion/NovelYume/releases/latest
-- 📲 **Téléchargement direct (APK)** : https://github.com/Yumesion/NovelYume/releases/latest/download/NovelYume-v3.7.10.apk
+- 📲 **Téléchargement direct (APK)** : https://github.com/Yumesion/NovelYume/releases/latest/download/NovelYume-v3.8.0.apk
 
 ## Installation
 
